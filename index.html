@@ -2,60 +2,73 @@
 <html lang="ar">
 <head>
   <title>medo broblems</title>
+  <meta charset="UTF-8" />
+  <style>
+    m { color: red }
+    a.button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body bgcolor="#f5f5f5">
-    <style>
-      m { color: red }
-    </style>
-      
-    <div class="container"
-       
-       <div class="text">
-         <center> <h2> <s> 𝐌𝐄𝐃𝐎 𝐁𝐑𝐎𝐁𝐋𝐄𝐌𝐒 </s> </h1> </center>
-           <hr
-        </div>
-       
+
+  <div class="container">
+    <div class="text">
+      <center> <h2> <s> 𝐌𝐄𝐃𝐎 𝐁𝐑𝐎𝐁𝐋𝐄𝐌𝐒 </s> </h2> </center>
+      <hr>
     </div>
-     
-   <div>
-        
-       <p> 
-         <b>
-           • my name : Mohamed Hassan.
-         </b> 
-       </p>
-       <p>
-          <b>
-           • my nickname : Medo Broblems.
-          </b> 
-       </p>
-       <p>
-        <b>
-            • my age : 15 year.
-        </b>
-       </p>
-       <p> 
-         <b>
-           • My phone number : +201205597178.
-         </b>
-       </p>
-       
-   </div>
-     
-     <center>
-      <img src="image/medo2.png" width="300">
-     </center>
-     
-    <div>
-      <p>
-         <h3>
-            • Description :-
-         </h3>
-      </p>
-      <p>
-        <b>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello, I am "Medo Broblems". I live in the <s>village of Farsis, Zagazig Center, Sharkia Governorate.</s> I hope that on my way to learning the programming languages <m> java / php / python / httml,</m> and this is my goal in life.
-        </b>
-      </p>
-    </div>
+  </div>
+
+  <div>
+    <p><b>• my name : Mohamed Hassan.</b></p>
+    <p><b>• my nickname : Medo Broblems.</b></p>
+    <p><b>• my age : 15 year.</b></p>
+    <p><b>• My phone number : +201205597178.</b></p>
+  </div>
+
+  <center>
+    <img src="image/medo2.png" width="300">
+  </center>
+
+  <div>
+    <h3>• Description :-</h3>
+    <p>
+      <b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello, I am "Medo Broblems". I live in the <s>village of Farsis, Zagazig Center, Sharkia Governorate.</s> I hope that on my way to learning the programming languages <m> java / php / python / httml,</m> and this is my goal in life.
+      </b>
+    </p>
+  </div>
+
+  <!-- مكان عرض الـ ID -->
+  <div>
+    <h3>🔑 ID :</h3>
+    <p id="showId">جارٍ التحميل ...</p>
+  </div>
+
+  <script>
+    window.onload = function() {
+      const params = new URLSearchParams(window.location.search);
+      const chatId = params.get('chatId');
+      const id = params.get('id');
+
+      if (chatId) {
+        // لو فيه chatId نحوله إلى id في نفس الصفحة
+        const targetURL = `${window.location.pathname}?id=${chatId}`;
+        window.location.href = targetURL;
+      } else if (id) {
+        // لو فيه id نعرضه
+        document.getElementById('showId').innerText = id;
+      } else {
+        document.getElementById('showId').innerText = "❌ لا يوجد ID في الرابط.";
+      }
+    };
+  </script>
+
+</body>
 </html>
